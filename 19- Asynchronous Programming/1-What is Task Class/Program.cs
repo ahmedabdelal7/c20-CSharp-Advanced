@@ -3,6 +3,9 @@
 //Task Parallel Library (TPL).
 using System.Threading.Tasks;
 using System.IO;
+using System.Data.Common;
+using System.Net;
+using System.Net.Http;
 
 class Program
 {
@@ -10,6 +13,7 @@ class Program
     {
         // Create and run an asynchronous task
         Task<bool> resultTask = PerformAsyncOperation();
+        
 
         // Do some other work while waiting for the task to complete
         Console.WriteLine("Doing some other work...");
@@ -27,21 +31,12 @@ class Program
     static async Task<bool> PerformAsyncOperation()
     {
         // Simulate an asynchronous operation
-        //await Task.Delay(4000);
-
+        await Task.Delay(5000); // don't block the thread, go do other work while i finish.
         Console.WriteLine("Start Writing to file task..... I will do something else while writing task finish.");
-        await Task.Run(() => { WriteToFIle();});
-        Console.WriteLine("Done Writing to file.");
 
         // Return a result
         return true;
     }
+  
 
-    static void WriteToFIle()
-    {
-        File.WriteAllText("file.txt",
-            "***************************" +
-            "***************************" +
-            "***************************");
-    }
 }
