@@ -1,58 +1,66 @@
 ﻿using System;
-using System.Net;
-using System.Data;
 using System.Threading.Tasks;
-using System.IO;
-using System.Reflection;
-using System.Security.Policy;
+
+// Custom event arguments class
+public class CustomEventArgs : EventArgs
+{
+    public int Parameter1 { get; }
+    public string Parameter2 { get; }
+
+    public CustomEventArgs(int param1, string param2)
+    {
+        Parameter1 = param1;
+        Parameter2 = param2;
+    }
+}
 
 class Program
 {
+    // Define a delegate for the callback
+    //public delegate void CallbackEventHandler(object sender, CustomEventArgs e);
+
+    // Define an event based on the delegate
+    // public static event CallbackEventHandler CallbackEvent;
+
+    //or
+    public static event EventHandler<CustomEventArgs> CallbackEvent;
+
+    //or
+    //public static event Action<int,string> CallbackEvent;
+
     static async Task Main()
     {
+        // Subscribe to the event
+        CallbackEvent += OnCallbackReceived;
 
-        Console.WriteLine("Starting tasks...");
+        // Create and run a Task for the asynchronous operation, passing CallbackEvent as a parameter
+        Task performTask = PerformAsyncOperation(CallbackEvent);
 
-        // Start the first task to download and print content length from CNN
-        Task task1 = DownloadAndPrintAsync("https://www.cnn.com");
-        Console.WriteLine("Task 1 started...");
+        // Do some other work while waiting for the task to complete
+        Console.WriteLine("Doing some other work...");
 
-        // Start the second task to download and print content length from Amazon
-        Task task2 = DownloadAndPrintAsync("https://www.google.com");
-        Console.WriteLine("Task 2 started...");
+        // Wait for the task to complete
+        await performTask;
 
-        // Start the third task to download and print content length from ProgrammingAdvices
-        Task task3 = DownloadAndPrintAsync("https://www.ProgrammingAdvices.com");
-        Console.WriteLine("Task 3 started...\n");
-
-        // Wait for all tasks to complete
-        await Task.WhenAll(task1, task2, task3);
-
-        // Print a message indicating that all tasks have finished execution
-        Console.WriteLine("\nDone, all tasks finished execution.");
+        Console.WriteLine("Done!");
         Console.ReadKey();
     }
 
-    static async Task DownloadAndPrintAsync(string url)
+    static async Task PerformAsyncOperation(EventHandler<CustomEventArgs> callback)
     {
+        // Simulate an asynchronous operation
+        await Task.Delay(2000);
 
-        string content;
+        // Create event arguments with two parameters
+        CustomEventArgs eventArgs = new CustomEventArgs(42, "Hello from event");
 
-        // Using statement ensures that the WebClient is disposed of properly
-        using (WebClient client = new WebClient())
-        {
-            // Simulate some work by adding a delay
-            await Task.Delay(100);
+        // Check if the callback event is not null before invoking
+        callback?.Invoke(null, eventArgs);
+    }
 
-            client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
-            //client.Headers.Add("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
-
-            // Download the content of the web page asynchronously
-            content = await client.DownloadStringTaskAsync(url);
-            //Invoke delegate.
-        }
-
-        // Print the URL and the length of the downloaded content
-        Console.WriteLine($"{url}: {content.Length} characters downloaded");
+    // Event handler for the CallbackEvent
+    static void OnCallbackReceived(object sender, CustomEventArgs e)
+    {
+        Console.WriteLine($"Event received: Parameter 1 - {e.Parameter1}, Parameter 2 - {e.Parameter2}");
     }
 }
