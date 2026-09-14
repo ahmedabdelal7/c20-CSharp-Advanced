@@ -1,0 +1,44 @@
+[33mf31507e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33mff03723[m HEAD@{1}: commit: Task Factory Class
+[33mf31507e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{2}: commit: Task.Run
+[33mc9fcfeb[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{3}: commit: Delegate
+[33me2b45c0[m HEAD@{4}: commit: Task Class With Call back Event
+[33m7acf7ee[m HEAD@{5}: commit: Task Class
+[33m983c75d[m HEAD@{6}: commit: Task Class Example 2
+[33m70b0523[m HEAD@{7}: commit: What is Thread Class
+[33m21d7011[m HEAD@{8}: commit: Download 3 Web Pages using Multi Threading
+[33mc43cc43[m HEAD@{9}: commit: Parametered Thread
+[33mbe6c79a[m HEAD@{10}: commit: Thread Class
+[33mcbd9257[m HEAD@{11}: commit: Operator Overloading
+[33m4fa8893[m HEAD@{12}: commit: Asymmetric Encryption
+[33m0038a95[m HEAD@{13}: commit: Symmetric Encryption
+[33mf9cf35e[m HEAD@{14}: commit: Hashing
+[33m1e40684[m HEAD@{15}: commit: String Builder
+[33m22a01b4[m HEAD@{16}: commit: App.config
+[33m5a3f66a[m HEAD@{17}: commit: Event Log
+[33m945ebec[m HEAD@{18}: commit: Rename folders ordering
+[33m5753836[m HEAD@{19}: commit: Windows Registry
+[33m891b229[m HEAD@{20}: commit: Generics In C#
+[33maa62d5c[m HEAD@{21}: commit: Mutable and Immutable Types
+[33m22fcb09[m HEAD@{22}: commit: Mutable and Immutable Types
+[33m9fadb98[m HEAD@{23}: commit: Special Comments In C#
+[33m6c97f4d[m HEAD@{24}: commit: Add Description to a Method
+[33m1a85958[m HEAD@{25}: commit: Reflection in C#
+[33m9b2171e[m HEAD@{26}: commit: Attributes In C#
+[33m5340253[m HEAD@{27}: commit: Serialization -> XML, JSON, Binary
+[33mb16792c[m HEAD@{28}: commit: Nullable Values in C#
+[33mb0022a6[m HEAD@{29}: commit: Using Statement in C#
+[33m801515c[m HEAD@{30}: commit: Using Statement in C#
+[33ma9158e0[m HEAD@{31}: commit: Lambda Expression
+[33mc73066c[m HEAD@{32}: commit: Normal Delegate & Func Delegate
+[33mdcbde79[m HEAD@{33}: commit: Predicate Delegate
+[33m0ee95d6[m HEAD@{34}: commit: Action Delegate
+[33mbbbd5b5[m HEAD@{35}: commit: Func Delegate
+[33mf1b440d[m HEAD@{36}: commit: Logger Example Using Delegate
+[33m0e3cd4b[m HEAD@{37}: commit: Publisher Subscriber Design Pattern (order exp)
+[33me8a186b[m HEAD@{38}: commit: News Publisher Subscriber Example
+[33m28019db[m HEAD@{39}: commit: Temperature Change Event Example
+[33m167cc7d[m HEAD@{40}: commit: Simple Event With Parameter Using Arguments
+[33m96aa6cb[m HEAD@{41}: commit: Simple Event With Parameter
+[33m811aa2e[m HEAD@{42}: Branch: renamed refs/heads/master to refs/heads/main
+[33m811aa2e[m HEAD@{44}: commit (initial): first commit
